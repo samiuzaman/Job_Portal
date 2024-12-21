@@ -9,8 +9,10 @@ import {
   CardTitle,
 } from "keep-react";
 import { FaMapMarkerAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 const HotJobCards = ({ job }) => {
   const {
+    _id,
     title,
     company,
     company_logo,
@@ -21,7 +23,7 @@ const HotJobCards = ({ job }) => {
   } = job;
   return (
     <div>
-      <Card className="pt-6 pb-3">
+      <Card className="pt-6 pb-3 bg-[#f2f6fda6]">
         <CardHeader className="flex items-center gap-3 px-4">
           <img src={company_logo} />
           <div>
@@ -36,8 +38,8 @@ const HotJobCards = ({ job }) => {
           <CardDescription>{description}</CardDescription>
 
           <div className="space-y-2">
-            {requirements.map((skill) => (
-              <Badge variant="border" className="mr-2">
+            {requirements.map((skill, index) => (
+              <Badge key={index} variant="border" className="mr-2">
                 {skill}
               </Badge>
             ))}
@@ -45,12 +47,19 @@ const HotJobCards = ({ job }) => {
         </CardContent>
         <CardFooter className="flex justify-between items-center px-6 pb-3">
           <p className="text-metal-600">
-            <span className="text-xl text-primary-600">
+            <span className="text-xl text-primary-600 font-medium">
               {salaryRange.min}-{salaryRange.max}
             </span>
             /{salaryRange.currency}
           </p>
-          <Button variant="softBg" className="hover:bg-primary-700 hover:text-white">Apply Now</Button>
+          <Link to={`/jobdetails/${_id}`}>
+            <Button
+              variant="softBg"
+              className="hover:bg-primary-700 hover:text-white"
+            >
+              Apply Now
+            </Button>
+          </Link>
         </CardFooter>
       </Card>
     </div>

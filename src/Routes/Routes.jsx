@@ -7,7 +7,7 @@ import Register from "../Pages/Register";
 
 import PrivetRoute from "../PrivetRoute/PrivetRoute";
 import Forgot from "../Pages/Forgot";
-import MyEquipmentList from "../Pages/MyEquipmentList";
+import JobDetails from "../Pages/JobDetails";
 
 const routes = createBrowserRouter([
   {
@@ -21,12 +21,14 @@ const routes = createBrowserRouter([
       },
 
       {
-        path: "/profile",
+        path: "/jobdetails/:id",
         element: (
           <PrivetRoute>
-            <MyEquipmentList></MyEquipmentList>
+            <JobDetails></JobDetails>
           </PrivetRoute>
         ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/jobs/${params.id}`),
       },
 
       {
