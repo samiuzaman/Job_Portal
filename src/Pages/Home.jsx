@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 
 import { Outlet } from "react-router-dom";
 import Banner from "../components/HomeLayout/Banner";
+import HotJobs from "../components/HomeLayout/HotJobs";
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
       </Helmet>
       <div className="">
         <Banner></Banner>
+        <HotJobs></HotJobs>
         <Outlet></Outlet>
       </div>
     </div>

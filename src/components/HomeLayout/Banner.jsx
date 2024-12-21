@@ -66,7 +66,7 @@ const Banner = () => {
               />
               <motion.img
                 animate={{ x: [100, 150, 100] }}
-                transition={{ duration: 8, repeat: Infinity }}
+                transition={{ duration: 8, delay: 4, repeat: Infinity }}
                 className="w-72 rounded-t-3xl rounded-br-[40px] border-b-4 border-l-4 border-primary-500 "
                 src="https://images.unsplash.com/photo-1653669486432-26b9271c90cc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt=""
@@ -80,5 +80,3 @@ const Banner = () => {
 };
 
 export default Banner;
-
-import React, { useState } from "react";
