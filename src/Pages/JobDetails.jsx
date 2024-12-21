@@ -1,5 +1,5 @@
 import { Button, Divider } from "keep-react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const JobDetails = () => {
   const loadedJob = useLoaderData();
@@ -71,7 +71,9 @@ const JobDetails = () => {
           <Divider className="my-4"></Divider>
 
           <div className="space-x-2">
-            <Button>Apply Now</Button>
+            <Link to={`/jobapply/${_id}`}>
+              <Button>Apply Now</Button>
+            </Link>
             <Button variant="softBg">Save Job</Button>
           </div>
         </div>

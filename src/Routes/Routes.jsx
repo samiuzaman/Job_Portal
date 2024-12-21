@@ -8,6 +8,7 @@ import Register from "../Pages/Register";
 import PrivetRoute from "../PrivetRoute/PrivetRoute";
 import Forgot from "../Pages/Forgot";
 import JobDetails from "../Pages/JobDetails";
+import JobApply from "../Pages/JobApply";
 
 const routes = createBrowserRouter([
   {
@@ -29,6 +30,14 @@ const routes = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/jobs/${params.id}`),
+      },
+      {
+        path: "/jobapply/:id",
+        element: (
+          <PrivetRoute>
+            <JobApply></JobApply>
+          </PrivetRoute>
+        ),
       },
 
       {
