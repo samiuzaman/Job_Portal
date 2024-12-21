@@ -1,0 +1,18 @@
+/* Keep React UI Library */
+@import "keep-react/css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* body {
+  @apply font-Poppins;
+} */
+.loader {
+  @apply min-h-screen w-full flex justify-center items-center;
+}
+/* Navbar active Route Design Start Here */
+a.active {
+  @apply text-[#4E21FF] font-medium font-Lora lg:bg-metal-100 lg:px-5 lg:py-2 rounded-lg;
+}
+/* Navbar active Route Design Start Here */
