@@ -34,7 +34,9 @@ const NavbarComponent = () => {
         </NavbarBrand>
         <NavbarList className="space-x-5 ">
           <NavLink to="/">Home</NavLink>
-          <NavLink to="/profile">Profile</NavLink>
+          <NavLink to="/myapplication">My Application</NavLink>
+          <NavLink to="/addjob">Add Job</NavLink>
+          <NavLink to="/mypostjob">My Post Job</NavLink>
         </NavbarList>
         <NavbarList>
           <div>
@@ -104,8 +106,9 @@ const NavbarComponent = () => {
           </div>
 
           <NavLink to="/">Home</NavLink>
-          <NavLink to="/myprofile">My Profile</NavLink>
-          <NavLink to="/about">About</NavLink>
+          <NavLink to="/myapplication">My Application</NavLink>
+          <NavLink to="/addjob">Add Job</NavLink>
+          <NavLink to="/mypostjob">My Post Job</NavLink>
           <div>
             {user && user.email ? (
               <Button onClick={handleSignOut} className="text-[#ffffff]">
